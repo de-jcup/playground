@@ -10,7 +10,12 @@ func main() {
 	wordSlice2 := words[2:4]
 
 	fmt.Println(s)
+	fmt.Println(words)
 	fmt.Println(wordSlice)
 	fmt.Println(wordSlice2)
+	
+	/* change the slice ... and so words...*/
+	wordSlice2[0]="no longer around"
+	fmt.Println(words)	
 
 }
