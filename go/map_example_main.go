@@ -32,4 +32,29 @@ func main() {
 		"Google":    {37.42202, -122.08408},
 	}
 	fmt.Println(m3)
+	
+	mutateMaps()
+}
+
+func mutateMaps(){
+	fmt.Println("-- mutate maps")
+	m := make(map[string]int)
+
+	v, ok := m["Answer"]
+	fmt.Println("The value:", v, "Present?", ok)
+	
+	m["Answer"] = 42
+	fmt.Println("The value:", m["Answer"])
+
+	v, ok = m["Answer"]
+	fmt.Println("The value:", v, "Present?", ok)
+	
+	m["Answer"] = 48
+	fmt.Println("The value:", m["Answer"])
+
+	delete(m, "Answer")
+	fmt.Println("The value:", m["Answer"])
+
+	v, ok = m["Answer"]
+	fmt.Println("The value:", v, "Present?", ok)
 }
