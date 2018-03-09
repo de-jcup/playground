@@ -3,13 +3,18 @@ package main
 import "fmt"
 
 func main() {
+	fmt.Println("----ints:")
 	primes := [6]int{2, 3, 5, 7, 11, 13}
-	words := []string{"Hello", "World", "around", "at", "all"}
+
 	var s []int = primes[1:4]
+	fmt.Println(s)
+	printSliceInt(s)
+	
+	fmt.Println("----word:")	
+	words := []string{"Hello", "World", "around", "at", "all"}
 	var wordSlice []string = words[0:1]
 	wordSlice2 := words[2:4]
 
-	fmt.Println(s)
 	fmt.Println(words)
 	fmt.Println(wordSlice)
 	fmt.Println(wordSlice2)
@@ -33,4 +38,10 @@ func main() {
 		{13, true},
 	}
 	fmt.Println(s2)
+	
+	
+}
+
+func printSliceInt(s []int) {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
