@@ -1,5 +1,3 @@
-package main
-
 import "fmt"
 
 func main() {
@@ -30,7 +28,11 @@ func main() {
 	/* change the slice ... and so words...*/
 	wordSlice2[0]="no longer around"
 	fmt.Println(words)	
-
+	
+	fmt.Println(">append")
+	words = append(words,"and","back")
+	fmt.Println(words)
+	
 	fmt.Println("----structs:")
 	
 	/* structures as arrays/slices*/
