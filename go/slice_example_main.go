@@ -18,10 +18,10 @@ func main() {
 	wordSlice2[0]="no longer around"
 	fmt.Println(words)	
 
-	
+	fmt.Println("----structs:")
 	
 	/* structures as arrays/slices*/
-	s := []struct {
+	s2 := []struct {
 		i int
 		b bool
 	}{
@@ -32,5 +32,5 @@ func main() {
 		{11, false},
 		{13, true},
 	}
-	fmt.Println(s)
+	fmt.Println(s2)
 }
