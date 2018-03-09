@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func sum(s []int, c chan int) {
 	sum := 0
@@ -14,10 +17,11 @@ func main() {
 	sumByGoRoutinesAndCombinedByChannel()
 	bufferedChannel()
 	closingChannelExample()
+	selectingChannelExample()
 }
 
 // see https://tour.golang.org/concurrency/2
-func sumByGoRoutinesAndCombinedByChannel(){
+func sumByGoRoutinesAndCombinedByChannel() {
 	fmt.Println("--sum by 2 goroutines combined by channel")
 	s := []int{7, 2, 8, -9, 4, 0}
 
@@ -29,7 +33,7 @@ func sumByGoRoutinesAndCombinedByChannel(){
 	fmt.Println(x, y, x+y)
 }
 
-func bufferedChannel(){
+func bufferedChannel() {
 	fmt.Println("--buffered channel")
 	ch := make(chan int, 2)
 	ch <- 1
@@ -53,5 +57,22 @@ func closingChannelExample() {
 	go fibonacci(cap(c), c)
 	for i := range c {
 		fmt.Println(i)
+	}
+}
+
+func selectingChannelExample() {
+	tick := time.Tick(100 * time.Millisecond)
+	boom := time.After(500 * time.Millisecond)
+	for {
+		select {
+		case <-tick:
+			fmt.Println("tick.")
+		case <-boom:
+			fmt.Println("BOOM!")
+			return
+		default:
+			fmt.Println("    .")
+			time.Sleep(50 * time.Millisecond)
+		}
 	}
 }
