@@ -3,6 +3,14 @@ package main
 import "fmt"
 
 func main() {
+	fmt.Println("----nil:")
+	var snil []int
+	fmt.Println(snil, len(snil), cap(snil))
+	if snil == nil {
+		fmt.Println("snil=nil!")
+	}
+	
+	
 	fmt.Println("----ints:")
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 
