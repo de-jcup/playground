@@ -1,0 +1,20 @@
+# these are my settings for my raspberry pi 4 with passive cooling case
+#
+
+
+# Place "config.txt" changes (dtparam, dtoverlay, disable_overscan, etc.) in
+# this file. Please refer to the README file for a description of the various
+# configuration files on the boot partition.
+dtoverlay=vc4-fkms-v3d
+disable_overscan=1
+gpu_mem=256
+
+# From : https://github.com/themagpimag/magpi-issue90/blob/master/Overclock/config.tx
+# See also: https://magpi.raspberrypi.org/articles/how-to-overclock-raspberry-pi-4
+# overclock GPU:
+gpu_freq=750
+
+# overclock CPU:
+#uncomment to overclock the arm. 700 MHz is the default
+over_voltage=2
+arm_freq=1750
