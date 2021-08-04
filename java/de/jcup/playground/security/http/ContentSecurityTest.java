@@ -31,7 +31,7 @@ public class ContentSecurityTest {
             /* @formatter:on */
             
             t.getResponseHeaders().put("Content-Security-Policy", Arrays.asList("default-src localhost"));
-            // when next line is commented, the the "Hello World will be red... other wise not because of CSP set
+            // when next line is NOT commented, the the "Hello World will be red... other wise not because of CSP set
 //            t.getResponseHeaders().put("Content-Security-Policy", Arrays.asList("style-src 'unsafe-inline'"));
 
             OutputStream os = t.getResponseBody();
