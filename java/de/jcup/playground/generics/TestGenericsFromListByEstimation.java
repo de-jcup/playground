@@ -9,6 +9,21 @@ import java.util.List;
 // until it became clear that the question was not correct and it was only about Jackson Typing problems, which can be done by using Jackson correct way
 // But here to keep as an example. Maybe a good start point for lib for runtime inspection
 
+
+/*
+
+Output is:
+
+Variant1: estimation not possible because no content:
+>Found type:interface java.util.List
+>Estimated content class:class java.lang.Object
+
+Variant2: estimation possible because content available:
+>Found type:interface java.util.List
+>Estimated content class:class de.jcup.playground.generics.X
+
+*/
+
 class X {
     private String y;
 }
